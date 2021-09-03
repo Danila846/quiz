@@ -37,33 +37,58 @@ h2 {
 .quiz-header {
 	padding: 72px;
 }
-
 .btn {
+	text-transform: uppercase;
 	padding: 18px;
 	border: none;
-	background-color: rgb(30, 107, 251);
+	background-color: hsla(20, 80%, 35%, 0.7);
 	width: 100%;
 	font-size: 21px;
-	color: #fff;
+	color: hsl(0, 0%, 100%);
 	font-family: inherit;
 	cursor: pointer;
 }
-
 .btn:hover {
-	background-color: rgb(27, 90, 207);
+	background-color: hsla(20, 80%, 35%, 0.8);
 }
-
-ul li {
-	font-size: 20px;
-	margin: 18px 0px;
-}
-
-ul li label {
+input,
+label {
 	cursor: pointer;
+	padding: 0px 0px 0px 8px;
 }
 
-@media (max-width: 610px) {
-	body {
-		padding: 10px;
-	}
+input {
+	position: relative;
+	height: 11px;
+	width: 11px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	outline: none;
+}
+
+input::before {
+	content: "";
+	position: absolute;
+	top: 55%;
+	left: 50%;
+	width: 11px;
+	height: 11px;
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	border: 1px solid hsla(20, 80%, 35%, 0.7);
+}
+
+input:checked::after {
+	content: "";
+	position: absolute;
+	top: 55%;
+	left: 50%;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background-color: hsla(20, 80%, 35%, 0.7);
+	transform: translate(-50%, -50%);
+	visibility: visible;
 }
